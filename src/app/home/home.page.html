@@ -9,12 +9,28 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Login Lp3i</ion-title>
     </ion-toolbar>
   </ion-header>
+  <div style="padding: 20px;" id="container">
+    <div class="form">
+      <ion-item fill="solid">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" ngModel email></ion-input>
+        <ion-note slot="helper">Enter a valid email</ion-note>
+        <ion-note slot="error">Invalid email</ion-note>
+      </ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+      <ion-item fill="solid">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="email" ngModel password></ion-input>
+        <ion-note slot="helper">Enter a valid password</ion-note>
+        <ion-note slot="error">Invalid password</ion-note>
+      </ion-item>
+    </div>
+    <div class="button">
+      <ion-title color="black">Buttons</ion-title>
+    </div>
   </div>
+
 </ion-content>

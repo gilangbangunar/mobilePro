@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Tambah Data</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" [fullscreen]="true">
+  <ion-item>
+    <ion-label position="floating">Judul</ion-label>
+    <ion-input [(ngModel)]="title" placeholder="Masukan Judul" name="title" type="text" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Deskripsi</ion-label>
+    <ion-textarea [(ngModel)]="description" placeholder="Masukan Deskripsi" name="description" type="deskripsi"
+      required></ion-textarea>
+  </ion-item>
+  <br>
+  <ion-button shape="round" (click)="tambahData()" expand="full">Tambah Data</ion-button>
+  <h2>To do List</h2>
+  <ion-list>
+    <ion-item *ngFor="let item of itemList; let i = index">
+      <ion-checkbox [(ngModel)]="item.isChecked"></ion-checkbox>
+      <ion-label [ngClass]="{'checked-item': item.isChecked}" style="padding-left: 20px;">
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.description }}</p>
+      </ion-label>
+      <ion-button *ngIf="!item.isChecked" (click)="removeItem(i)">x</ion-button>
+      <p class="status1" style="color: green;" *ngIf="item.isChecked">Done</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
